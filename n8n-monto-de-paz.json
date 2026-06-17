@@ -1,0 +1,172 @@
+{
+  "name": "Monto de Paz — Funnel Completo",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "monto-de-paz-lead",
+        "responseMode": "onReceived",
+        "responseData": "firstEntryJson",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-lead",
+      "name": "Webhook — Lead (WhatsApp)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "monto-de-paz-lead"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "monto-de-paz-survey",
+        "responseMode": "onReceived",
+        "responseData": "firstEntryJson",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-survey",
+      "name": "Webhook — Survey (Encuesta)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 560],
+      "webhookId": "monto-de-paz-survey"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "TU_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Leads",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ $json.body.timestamp }}",
+            "whatsapp_number": "={{ $json.body.whatsapp_number }}",
+            "situacion_actual": "={{ $json.body.situacion_actual }}",
+            "mayor_obstaculo": "={{ $json.body.mayor_obstaculo }}",
+            "monto_paz_calculado": "={{ $json.body.monto_paz_calculado }}",
+            "monto_mensual": "={{ $json.body.monto_mensual }}",
+            "moneda": "={{ $json.body.moneda }}",
+            "meses": "={{ $json.body.meses }}",
+            "ali": "={{ $json.body.desglose.alimentacion }}",
+            "viv": "={{ $json.body.desglose.vivienda }}",
+            "sal": "={{ $json.body.desglose.salud }}",
+            "tra": "={{ $json.body.desglose.transporte }}",
+            "fondo_emergencia": "={{ $json.body.desglose.fondo_emergencia }}",
+            "total_mensual": "={{ $json.body.desglose.total_mensual }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "sheets-lead",
+      "name": "Google Sheets — Leads",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [560, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "TU_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Insights",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ $json.body.timestamp }}",
+            "whatsapp_number": "={{ $json.body.whatsapp_number }}",
+            "reaccion_numero": "={{ $json.body.reaccion_numero }}",
+            "open_insight": "={{ $json.body.open_insight }}",
+            "monto_paz_calculado": "={{ $json.body.monto_paz_calculado }}",
+            "moneda": "={{ $json.body.moneda }}",
+            "event": "={{ $json.body.event }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "sheets-survey",
+      "name": "Google Sheets — Insights",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [560, 560]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={ \"status\": \"ok\", \"message\": \"Lead registrado\" }",
+        "options": {}
+      },
+      "id": "respond-lead",
+      "name": "Respuesta — Lead OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={ \"status\": \"ok\", \"message\": \"Encuesta registrada\" }",
+        "options": {}
+      },
+      "id": "respond-survey",
+      "name": "Respuesta — Survey OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [880, 560]
+    }
+  ],
+  "connections": {
+    "Webhook — Lead (WhatsApp)": {
+      "main": [
+        [{ "node": "Google Sheets — Leads", "type": "main", "index": 0 }]
+      ]
+    },
+    "Google Sheets — Leads": {
+      "main": [
+        [{ "node": "Respuesta — Lead OK", "type": "main", "index": 0 }]
+      ]
+    },
+    "Webhook — Survey (Encuesta)": {
+      "main": [
+        [{ "node": "Google Sheets — Insights", "type": "main", "index": 0 }]
+      ]
+    },
+    "Google Sheets — Insights": {
+      "main": [
+        [{ "node": "Respuesta — Survey OK", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 2,
+  "tags": ["marjocoach", "monto-de-paz", "funnel"]
+}

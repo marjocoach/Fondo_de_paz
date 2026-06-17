@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Netlify
+.netlify/
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
