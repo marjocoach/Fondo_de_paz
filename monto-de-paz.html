@@ -1175,7 +1175,7 @@ function fitNumberToEyebrow() {
   const eyebrow = document.querySelector('#s-result .result-eyebrow');
   const rNum    = document.getElementById('r-num');
   if (!eyebrow || !rNum || !rNum.textContent) return;
-  const target = eyebrow.getBoundingClientRect().width * 1.5;
+  const target = eyebrow.getBoundingClientRect().width * 1.2;
   if (target <= 0) return;
   let lo = 16, hi = 450;
   for (let i = 0; i < 30; i++) {
