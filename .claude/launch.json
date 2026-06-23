@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Monto de Paz · Static Server",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "/Users/marjorie/monto-de-paz"],
+      "port": 3000
+    }
+  ]
+}
