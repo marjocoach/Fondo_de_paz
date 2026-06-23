@@ -124,6 +124,7 @@ body::before{
 .wordmark em{font-style:italic;color:var(--accent);}
 .wordmark .wslash{color:var(--border);margin:0 8px;font-weight:300;}
 .wordmark .wen{font-size:13px;font-weight:300;color:var(--muted);font-style:italic;}
+.lang-toggle-bar{position:fixed;top:16px;left:20px;z-index:300;}
 .lang-bar{
   display:flex;gap:4px;background:var(--card);
   border:1px solid var(--border);border-radius:20px;padding:4px;flex-shrink:0;
@@ -655,8 +656,15 @@ body::before{
 </div>
 
 <!-- SOCIAL HEADER -->
+<div class="lang-toggle-bar">
+  <div class="lang-bar">
+    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
 <div class="social-header">
-  <button class="sobre-btn" onclick="openSobre()">Sobre mí</button>
+  <button class="sobre-btn" onclick="openSobre()" data-es="Sobre mí" data-en="About me">Sobre mí</button>
   <a class="social-icon" href="https://www.linkedin.com/in/marjocoach" target="_blank" aria-label="LinkedIn">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
   </a>
@@ -673,7 +681,7 @@ body::before{
   <div class="hero-page">
     <div class="hero-eyebrow" data-es="Herramienta gratuita · Marjo Coach" data-en="Free tool · Marjo Coach">Herramienta gratuita · Marjo Coach</div>
     <div class="hero-title-row">
-      <h1>Monto&nbsp;<em>de Paz</em></h1>
+      <h1 data-es="Monto&nbsp;<em>de Paz</em>" data-en="Peace&nbsp;<em>Number</em>">Monto&nbsp;<em>de Paz</em></h1>
     </div>
     <div class="hero-story-block storytelling-content" style="color:#FFFFFF;font-size:16px;line-height:1.6;max-width:650px;margin:0 auto;">
       <p style="margin-bottom:20px;">Hola, soy Marjo y quiero hacerte una pregunta directa:
@@ -706,11 +714,11 @@ body::before{
     <div class="funnel-card">
       <div class="progress-wrap" id="progress-wrap">
         <div class="progress-steps">
-          <div class="ps-col"><div class="ps-dot" id="pd-1"></div><div class="ps-lbl" id="pl-1">Tu Base</div></div>
+          <div class="ps-col"><div class="ps-dot" id="pd-1"></div><div class="ps-lbl" id="pl-1" data-es="Tu Base" data-en="Your Base">Tu Base</div></div>
           <div class="ps-line-wrap"><div class="ps-line" id="pline-1"></div></div>
-          <div class="ps-col"><div class="ps-dot" id="pd-2"></div><div class="ps-lbl" id="pl-2">Tu Diagnóstico</div></div>
+          <div class="ps-col"><div class="ps-dot" id="pd-2"></div><div class="ps-lbl" id="pl-2" data-es="Tu Diagnóstico" data-en="Your Diagnosis">Tu Diagnóstico</div></div>
           <div class="ps-line-wrap"><div class="ps-line" id="pline-2"></div></div>
-          <div class="ps-col"><div class="ps-dot" id="pd-3"></div><div class="ps-lbl" id="pl-3">Tu Estrategia</div></div>
+          <div class="ps-col"><div class="ps-dot" id="pd-3"></div><div class="ps-lbl" id="pl-3" data-es="Tu Estrategia" data-en="Your Strategy">Tu Estrategia</div></div>
         </div>
       </div>
       <div class="step-badge" data-es="Paso 1 de 2 · Tu base financiera" data-en="Step 1 of 2 · Your financial base">Paso 1 de 2 · Tu base financiera</div>
@@ -767,26 +775,26 @@ body::before{
 
       <!-- Situación actual -->
       <div style="margin-top:28px;">
-        <div class="funnel-q" style="font-size:18px;margin-bottom:4px;">¿Cuál te describe mejor hoy?</div>
-        <div class="funnel-sub" style="margin-bottom:14px;">Sin juicio. Esto nos ayuda a entender tu punto de partida.</div>
+        <div class="funnel-q" style="font-size:18px;margin-bottom:4px;" data-es="¿Cuál te describe mejor hoy?" data-en="What describes you best today?">¿Cuál te describe mejor hoy?</div>
+        <div class="funnel-sub" style="margin-bottom:14px;" data-es="Sin juicio. Esto nos ayuda a entender tu punto de partida." data-en="No judgment. This helps us understand your starting point.">Sin juicio. Esto nos ayuda a entender tu punto de partida.</div>
         <div class="sit-grid" id="sit-grid">
           <button class="sit-card" onclick="selectSit('dependiente')" data-segmento="dependiente">
-            <div class="sit-card-title">Dependiente (Tengo un empleo de forma estable)</div>
+            <div class="sit-card-title" data-es="Dependiente (Tengo un empleo de forma estable)" data-en="Employed (I have a stable job)">Dependiente (Tengo un empleo de forma estable)</div>
           </button>
           <button class="sit-card" onclick="selectSit('paralelo')" data-segmento="paralelo">
-            <div class="sit-card-title">Emprendo en paralelo a mi empleo</div>
+            <div class="sit-card-title" data-es="Emprendo en paralelo a mi empleo" data-en="Side hustle alongside my job">Emprendo en paralelo a mi empleo</div>
           </button>
           <button class="sit-card" onclick="selectSit('independiente')" data-segmento="independiente">
-            <div class="sit-card-title">Independiente, Emprendedor o Empresario</div>
+            <div class="sit-card-title" data-es="Independiente, Emprendedor o Empresario" data-en="Freelancer, Entrepreneur or Business Owner">Independiente, Emprendedor o Empresario</div>
           </button>
           <button class="sit-card" onclick="selectSit('sin_empleo')" data-segmento="sin_empleo">
-            <div class="sit-card-title">Sin empleo actualmente</div>
+            <div class="sit-card-title" data-es="Sin empleo actualmente" data-en="Currently unemployed">Sin empleo actualmente</div>
           </button>
         </div>
-        <p class="coach-err" id="err-sit" style="margin-top:8px;">Selecciona una opción para continuar.</p>
+        <p class="coach-err" id="err-sit" style="margin-top:8px;" data-es="Selecciona una opción para continuar." data-en="Select an option to continue.">Selecciona una opción para continuar.</p>
       </div>
 
-      <button class="btn-primary" onclick="calcAndNext()" style="margin-top:28px;">Ver mi Monto de Paz →</button>
+      <button class="btn-primary" onclick="calcAndNext()" style="margin-top:28px;" data-es="Ver mi Monto de Paz →" data-en="See my Peace Number →">Ver mi Monto de Paz →</button>
     </div>
   </div>
 </div>
@@ -802,7 +810,7 @@ body::before{
     <!-- BLOQUE NÚMEROS -->
     <div class="result-block">
       <div class="result-glow"></div>
-      <div class="result-eyebrow">Tu Monto de Paz</div>
+      <div class="result-eyebrow" data-es="Tu Monto de Paz" data-en="Your Peace Number">Tu Monto de Paz</div>
       <div class="result-number" id="r-num">—</div>
       <div class="result-sub" id="r-sub"></div>
       <div class="result-breakdown" id="r-bkd"></div>
@@ -810,36 +818,36 @@ body::before{
       <div class="result-actions">
         <button class="abtn abtn-dl" onclick="downloadCard()" id="dl-btn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>Descargar imagen</span>
+          <span data-es="Descargar imagen" data-en="Download image">Descargar imagen</span>
         </button>
       </div>
     </div>
 
     <!-- BLOQUE DIAGNÓSTICO -->
     <div class="rfield-block">
-      <div class="rfield-q">Si mañana te quedas sin ingresos, ¿cuántos días o meses podrías mantener tu estilo de vida actual con lo que tienes ahorrado?</div>
-      <div class="rfield-hint">No importa si es cero. Necesitamos la foto de hoy.</div>
+      <div class="rfield-q" data-es="Si mañana te quedas sin ingresos, ¿cuántos días o meses podrías mantener tu estilo de vida actual con lo que tienes ahorrado?" data-en="If you lost all income tomorrow, how many days or months could you maintain your current lifestyle with what you have saved?">Si mañana te quedas sin ingresos, ¿cuántos días o meses podrías mantener tu estilo de vida actual con lo que tienes ahorrado?</div>
+      <div class="rfield-hint" data-es="No importa si es cero. Necesitamos la foto de hoy." data-en="Even if it's zero. We need today's snapshot.">No importa si es cero. Necesitamos la foto de hoy.</div>
       <div class="toggle-row">
         <div class="coach-input-row" style="flex:1;margin-bottom:0;">
           <input class="calc-input" type="number" id="c-supervivencia" placeholder="0" min="0" style="width:100%;padding-left:8px;" oninput="validateResultFields()">
         </div>
         <div class="toggle-group">
-          <button class="toggle-btn active" id="tog-dias" onclick="setUnidad('dias')">Días</button>
-          <button class="toggle-btn" id="tog-meses" onclick="setUnidad('meses')">Meses</button>
+          <button class="toggle-btn active" id="tog-dias" onclick="setUnidad('dias')" data-es="Días" data-en="Days">Días</button>
+          <button class="toggle-btn" id="tog-meses" onclick="setUnidad('meses')" data-es="Meses" data-en="Months">Meses</button>
         </div>
       </div>
-      <p class="rfield-err" id="err-supervivencia">Ingresa un valor.</p>
+      <p class="rfield-err" id="err-supervivencia" data-es="Ingresa un valor." data-en="Enter a value.">Ingresa un valor.</p>
 
-      <div class="rfield-q" style="margin-top:24px;">¿Cuánto podrías separar <strong style="color:var(--accent)">CADA SEMANA</strong> desde tu celular sin afectar comida ni techo?</div>
-      <div class="rfield-hint">Sin asfixiarte. Realista.</div>
+      <div class="rfield-q" style="margin-top:24px;" data-es="¿Cuánto podrías separar <strong style=&quot;color:var(--accent)&quot;>CADA SEMANA</strong> desde tu celular sin afectar comida ni techo?" data-en="How much could you set aside <strong style=&quot;color:var(--accent)&quot;>EVERY WEEK</strong> from your phone without affecting food or rent?">¿Cuánto podrías separar <strong style="color:var(--accent)">CADA SEMANA</strong> desde tu celular sin afectar comida ni techo?</div>
+      <div class="rfield-hint" data-es="Sin asfixiarte. Realista." data-en="Without choking yourself. Be realistic.">Sin asfixiarte. Realista.</div>
       <div class="coach-input-row" style="margin-bottom:0;">
         <span class="csym" id="sym-semanal">S/</span>
         <input class="calc-input" type="number" id="c-semanal" placeholder="0" min="0" style="width:100%;padding-left:8px;" oninput="validateResultFields()">
       </div>
-      <p class="rfield-err" id="err-semanal">Ingresa un valor.</p>
+      <p class="rfield-err" id="err-semanal" data-es="Ingresa un valor." data-en="Enter a value.">Ingresa un valor.</p>
     </div>
 
-    <button class="btn-primary" id="btn-to-coach" onclick="goToCoach()" style="margin-top:4px;">Crear mi Plan de Acción Gratis →</button>
+    <button class="btn-primary" id="btn-to-coach" onclick="goToCoach()" style="margin-top:4px;" data-es="Crear mi Plan de Acción Gratis →" data-en="Create my Free Action Plan →">Crear mi Plan de Acción Gratis →</button>
 
   </div>
 </div>
@@ -850,40 +858,42 @@ body::before{
 <div class="screen" id="s-coach">
   <div class="coach-wrap">
     <div class="coach-card">
-      <div class="coach-title">Tu Estrategia.</div>
-      <div class="coach-subtitle">Un paso concreto hoy vale más que un plan perfecto que nunca empieza.</div>
+      <div class="coach-title" data-es="Tu Estrategia." data-en="Your Strategy.">Tu Estrategia.</div>
+      <div class="coach-subtitle" data-es="Un paso concreto hoy vale más que un plan perfecto que nunca empieza." data-en="One concrete step today is worth more than a perfect plan that never starts.">Un paso concreto hoy vale más que un plan perfecto que nunca empieza.</div>
 
       <!-- Microacción -->
-      <div class="coach-q" style="line-height:1.5;margin-top:8px;">¿Cuál es la microacción concreta con la que te comprometes HOY?</div>
+      <div class="coach-q" style="line-height:1.5;margin-top:8px;" data-es="¿Cuál es la microacción concreta con la que te comprometes HOY?" data-en="What is the concrete micro-action you commit to TODAY?">¿Cuál es la microacción concreta con la que te comprometes HOY?</div>
       <textarea class="survey-textarea" id="c-microaccion"
         placeholder="Ej: Esta tarde cancelaré la suscripción de streaming que no uso..."
+        data-ph-es="Ej: Esta tarde cancelaré la suscripción de streaming que no uso..."
+        data-ph-en="E.g.: This afternoon I'll cancel the streaming subscription I don't use..."
         style="margin-top:10px;margin-bottom:6px;min-height:110px;resize:none;"></textarea>
-      <p style="font-size:11px;color:var(--muted);margin-bottom:4px;">Sé específico. "Ahorrar más" o "gastar menos" no son válidas.</p>
-      <p class="coach-err" id="err-microaccion">Este campo es requerido.</p>
+      <p style="font-size:11px;color:var(--muted);margin-bottom:4px;" data-es='Sé específico. "Ahorrar más" o "gastar menos" no son válidas.' data-en='Be specific. "Save more" or "spend less" are not valid.'>Sé específico. "Ahorrar más" o "gastar menos" no son válidas.</p>
+      <p class="coach-err" id="err-microaccion" data-es="Este campo es requerido." data-en="This field is required.">Este campo es requerido.</p>
 
       <!-- Prioridad -->
-      <div class="coach-q" style="margin-top:28px;line-height:1.5;">Para construir tu Monto de Paz, ¿cuál es tu prioridad?</div>
+      <div class="coach-q" style="margin-top:28px;line-height:1.5;" data-es="Para construir tu Monto de Paz, ¿cuál es tu prioridad?" data-en="To build your Peace Number, what is your priority?">Para construir tu Monto de Paz, ¿cuál es tu prioridad?</div>
       <div class="prio-grid" style="margin-top:12px;">
         <button class="prio-card" onclick="selectPrioridad('A')" data-prio="A">
           <span class="prio-letter">A</span>
-          <span class="prio-text">100% seguro y disponible en 24h, aunque no crezca nada.</span>
+          <span class="prio-text" data-es="100% seguro y disponible en 24h, aunque no crezca nada." data-en="100% safe and available within 24h, even if it doesn't grow.">100% seguro y disponible en 24h, aunque no crezca nada.</span>
         </button>
         <button class="prio-card" onclick="selectPrioridad('B')" data-prio="B">
           <span class="prio-letter">B</span>
-          <span class="prio-text">Dejarlo quieto unos meses si crece más que un banco.</span>
+          <span class="prio-text" data-es="Dejarlo quieto unos meses si crece más que un banco." data-en="Leave it untouched for a few months if it grows more than a bank.">Dejarlo quieto unos meses si crece más que un banco.</span>
         </button>
         <button class="prio-card" onclick="selectPrioridad('C')" data-prio="C">
           <span class="prio-letter">C</span>
-          <span class="prio-text">Crecer a largo plazo; acepto que el mercado sube y baja.</span>
+          <span class="prio-text" data-es="Crecer a largo plazo; acepto que el mercado sube y baja." data-en="Grow long-term; I accept that markets go up and down.">Crecer a largo plazo; acepto que el mercado sube y baja.</span>
         </button>
         <button class="prio-card" onclick="selectPrioridad('D')" data-prio="D">
           <span class="prio-letter">D</span>
-          <span class="prio-text">No sé de finanzas, necesito que me recomienden.</span>
+          <span class="prio-text" data-es="No sé de finanzas, necesito que me recomienden." data-en="I don't know finance, I need a recommendation.">No sé de finanzas, necesito que me recomienden.</span>
         </button>
       </div>
-      <p class="coach-err" id="err-prioridad">Selecciona una opción.</p>
+      <p class="coach-err" id="err-prioridad" data-es="Selecciona una opción." data-en="Select an option.">Selecciona una opción.</p>
 
-      <button class="btn-primary" onclick="submitCoach()" style="margin-top:28px;">Generar mi Reporte de Paz Financiera →</button>
+      <button class="btn-primary" onclick="submitCoach()" style="margin-top:28px;" data-es="Generar mi Reporte de Paz Financiera →" data-en="Generate my Financial Peace Report →">Generar mi Reporte de Paz Financiera →</button>
     </div>
   </div>
 </div>
@@ -894,11 +904,11 @@ body::before{
 <div class="screen" id="s-final">
   <div class="result-page" style="padding-top:40px;">
     <div class="capture-block" id="unified-block">
-      <div class="capture-eyebrow">Último paso · Gratis</div>
-      <div class="capture-q">¡Tu Reporte está listo! ¿A dónde te lo enviamos?</div>
-      <div class="capture-sub">Te enviamos tu plan personalizado + seguimiento en 30 días por WhatsApp. Sin spam.</div>
+      <div class="capture-eyebrow" data-es="Último paso · Gratis" data-en="Last step · Free">Último paso · Gratis</div>
+      <div class="capture-q" data-es="¡Tu Reporte está listo! ¿A dónde te lo enviamos?" data-en="Your Report is ready! Where should we send it?">¡Tu Reporte está listo! ¿A dónde te lo enviamos?</div>
+      <div class="capture-sub" data-es="Te enviamos tu plan personalizado + seguimiento en 30 días por WhatsApp. Sin spam." data-en="We'll send your personalized plan + 30-day WhatsApp follow-up. No spam.">Te enviamos tu plan personalizado + seguimiento en 30 días por WhatsApp. Sin spam.</div>
 
-      <input class="name-input" type="text" id="name-input" placeholder="¿Cómo te llamo?" autocomplete="given-name" oninput="validateLead()">
+      <input class="name-input" type="text" id="name-input" placeholder="¿Cómo te llamo?" data-ph-es="¿Cómo te llamo?" data-ph-en="What's your name?" autocomplete="given-name" oninput="validateLead()">
       <div class="phone-row">
         <select class="country-select" id="country-code" onchange="validateLead()">
           <option value="+51">🇵🇪 +51</option>
@@ -917,18 +927,20 @@ body::before{
         </select>
         <input class="phone-input" type="tel" id="phone-input" placeholder="987 654 321" inputmode="numeric" oninput="validateLead()">
       </div>
-      <div class="phone-note">🔒 Solo uso tu número para este seguimiento. Nada más.</div>
+      <div class="phone-note" data-es="🔒 Solo uso tu número para este seguimiento. Nada más." data-en="🔒 I only use your number for this follow-up. Nothing else.">🔒 Solo uso tu número para este seguimiento. Nada más.</div>
 
       <button class="btn-primary" id="btn-submit-lead" onclick="submitLead()" disabled
-        style="opacity:0.45;cursor:not-allowed;transition:opacity 0.2s;">
+        style="opacity:0.45;cursor:not-allowed;transition:opacity 0.2s;"
+        data-es="Descargar mi Plan + Activar Seguimiento Gratis →"
+        data-en="Download my Plan + Activate Free Follow-up →">
         Descargar mi Plan + Activar Seguimiento Gratis →
       </button>
 
       <!-- Thank you -->
       <div class="thank-you" id="unified-ty" style="display:none;">
         <div class="ty-icon">✉️</div>
-        <div class="ty-title">¡Tu reporte está en camino!</div>
-        <div class="ty-sub">Te escribiré en 30 días. Mientras tanto, sigue <a href="https://www.instagram.com/unapausaconmarjo" target="_blank"><strong>@marjocoach</strong></a> para más recursos.</div>
+        <div class="ty-title" data-es="¡Tu reporte está en camino!" data-en="Your report is on its way!">¡Tu reporte está en camino!</div>
+        <div class="ty-sub" data-es="Te escribiré en 30 días. Mientras tanto, sigue <a href=&quot;https://www.instagram.com/unapausaconmarjo&quot; target=&quot;_blank&quot;><strong>@marjocoach</strong></a> para más recursos." data-en="I'll message you in 30 days. Meanwhile, follow <a href=&quot;https://www.instagram.com/unapausaconmarjo&quot; target=&quot;_blank&quot;><strong>@marjocoach</strong></a> for more resources.">Te escribiré en 30 días. Mientras tanto, sigue <a href="https://www.instagram.com/unapausaconmarjo" target="_blank"><strong>@marjocoach</strong></a> para más recursos.</div>
       </div>
     </div>
   </div>
@@ -969,6 +981,49 @@ let otroN = 0;
 let _supervivenciaUnidad = 'dias';
 
 // ══════════════════════════════════════
+// ══════════════════════════════════════
+// LANGUAGE TOGGLE
+// ══════════════════════════════════════
+let _lang = 'es';
+
+const _HERO_P = {
+  es: [
+    'Hola, soy Marjo y quiero hacerte una pregunta directa: <span style="color:#CCFF00;"><strong>¿Cuánto vale tu paz?</strong></span><br>Seguro me vas a decir que no tiene precio. Pero la verdad es que sí lo tiene, y podemos ponerle un número exacto.',
+    'Hace un tiempo, tomé la decisión de renunciar a mi trabajo para emprender. Pero no di un salto al vacío de forma irresponsable. Lo hice sabiendo exactamente cuánto dinero necesitaba en el banco para respirar tranquila mientras construía mi propio camino. Antes de dar el gran paso, hice algo que nadie me enseñó en el mundo corporativo: <span style="color:#CCFF00;"><strong>desnudé mis finanzas.</strong></span>',
+    'Calculé lo básico: alimentación, salud, vivienda, transporte y un <span style="color:#CCFF00;"><strong>colchón de emergencia</strong></span>. Multipliqué ese número por 12 meses. Ese resultado fue mi <span style="color:#CCFF00;"><strong>permiso emocional</strong></span>. La licencia que me di para crear, equivocarme y pivotar sin que la ansiedad económica me tocara la puerta cada fin de mes.',
+    'Hoy, <span style="color:#CCFF00;"><strong>el héroe de esta historia eres tú</strong></span>, porque estás buscando ese mismo respiro. No importa si quieres emprender, cambiar de aire o simplemente blindarte ante la incertidumbre del mercado: necesitas claridad.<br><br>Si estás empezando a ahorrar o quieres prepararte para lo que venga, no necesitas una fórmula mágica; necesitas tu propio <span style="color:#CCFF00;"><strong>Monto de Paz</strong></span>. Un número real, tangible, que te devuelva el control de tu vida.'
+  ],
+  en: [
+    'Hi, I\'m Marjo and I want to ask you something directly: <span style="color:#CCFF00;"><strong>How much is your peace worth?</strong></span><br>You\'ll probably say it\'s priceless. But the truth is, it has a price — and we can put an exact number on it.',
+    'Some time ago, I decided to quit my job to build my own path. But I didn\'t leap blindly. I did it knowing exactly how much money I needed in the bank to breathe easy while building my own way. Before taking that big step, I did something no corporate job ever taught me: <span style="color:#CCFF00;"><strong>I stripped my finances bare.</strong></span>',
+    'I calculated the basics: food, health, housing, transport, and an <span style="color:#CCFF00;"><strong>emergency cushion</strong></span>. I multiplied that number by 12 months. That result became my <span style="color:#CCFF00;"><strong>emotional permission</strong></span>. The license I gave myself to create, fail, and pivot without financial anxiety knocking on my door every month.',
+    'Today, <span style="color:#CCFF00;"><strong>you are the hero of this story</strong></span>, because you\'re looking for that same breath of fresh air. Whether you want to start a business, change direction, or protect yourself from market uncertainty: you need clarity.<br><br>If you\'re starting to save or want to prepare for what\'s ahead, you don\'t need a magic formula; you need your own <span style="color:#CCFF00;"><strong>Peace Number</strong></span>. A real, tangible number that gives you back control of your life.'
+  ]
+};
+
+function setLang(lang) {
+  _lang = lang;
+  document.documentElement.lang = lang;
+  // innerHTML elements
+  document.querySelectorAll('[data-es]').forEach(el => {
+    const t = el.getAttribute('data-' + lang);
+    if (t !== null) el.innerHTML = t;
+  });
+  // placeholder elements
+  document.querySelectorAll('[data-ph-es]').forEach(el => {
+    const t = el.getAttribute('data-ph-' + lang);
+    if (t !== null) el.placeholder = t;
+  });
+  // toggle active state
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  // hero story paragraphs
+  document.querySelectorAll('.hero-story-block p').forEach((p, i) => {
+    if (_HERO_P[lang][i] !== undefined) p.innerHTML = _HERO_P[lang][i];
+  });
+}
+
 // ANALYTICS
 // ══════════════════════════════════════
 function track(event_name) {
