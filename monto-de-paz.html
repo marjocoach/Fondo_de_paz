@@ -138,8 +138,8 @@ body::before{
 
 /* ── PROGRESS BAR (3 steps) ── */
 .progress-wrap{
-  position:fixed;top:66px;left:0;right:0;z-index:199;
-  padding:10px 24px 8px;display:none;pointer-events:none;
+  position:relative;top:0;z-index:auto;
+  padding:0 0 0;margin-bottom:24px;display:none;pointer-events:none;
 }
 .progress-wrap.visible{display:block;}
 .progress-steps{
@@ -665,16 +665,6 @@ body::before{
   </a>
 </div>
 
-<!-- PROGRESS BAR -->
-<div class="progress-wrap" id="progress-wrap">
-  <div class="progress-steps">
-    <div class="ps-col"><div class="ps-dot" id="pd-1"></div><div class="ps-lbl" id="pl-1">Tu Base</div></div>
-    <div class="ps-line-wrap"><div class="ps-line" id="pline-1"></div></div>
-    <div class="ps-col"><div class="ps-dot" id="pd-2"></div><div class="ps-lbl" id="pl-2">Tu Diagnóstico</div></div>
-    <div class="ps-line-wrap"><div class="ps-line" id="pline-2"></div></div>
-    <div class="ps-col"><div class="ps-dot" id="pd-3"></div><div class="ps-lbl" id="pl-3">Tu Estrategia</div></div>
-  </div>
-</div>
 
 <!-- ════════════════════════════════════
      SCREEN 0: HERO / STORY
@@ -684,12 +674,22 @@ body::before{
     <div class="hero-eyebrow" data-es="Herramienta gratuita · Marjo Coach" data-en="Free tool · Marjo Coach">Herramienta gratuita · Marjo Coach</div>
     <div class="hero-title-row">
       <h1>Monto&nbsp;<em>de Paz</em></h1>
-      <div class="hero-divider"></div>
-      <div class="hero-en">Peace Number</div>
     </div>
-    <div class="hero-story-block">
-      <p class="hero-p" data-es="Renuncié sin Plan A. Sin Plan B. Pero con un número. Antes de saltar, hice algo que nadie me enseñó en ningún trabajo: <strong>desnudé mis finanzas hasta lo más básico.</strong>" data-en="I quit without a Plan A. Without a Plan B. But with a number. Before I leapt, I did something no job ever taught me: <strong>I stripped my finances down to the bare essentials.</strong>">Renuncié sin Plan A. Sin Plan B. Pero con un número. Antes de saltar, hice algo que nadie me enseñó en ningún trabajo: <strong>desnudé mis finanzas hasta lo más básico.</strong></p>
-      <p class="hero-p" style="animation-delay:0.68s" data-es="Alimentación. Salud. Vivienda. Transporte. Y un colchón. Ese número × 12 meses fue el <strong>permiso emocional que me di para crear, equivocarme y respirar</strong> sin que la ansiedad económica tocara mi puerta." data-en="Food. Health. Housing. Transport. And a safety net. That number × 12 months was the <strong>emotional permission I gave myself to create, fail, and breathe</strong> without financial anxiety knocking at my door.">Alimentación. Salud. Vivienda. Transporte. Y un colchón. Ese número × 12 meses fue el <strong>permiso emocional que me di para crear, equivocarme y respirar</strong> sin que la ansiedad económica tocara mi puerta.</p>
+    <div class="hero-story-block storytelling-content" style="color:#FFFFFF;font-size:16px;line-height:1.6;max-width:650px;margin:0 auto;">
+      <p style="margin-bottom:20px;">Hola, soy Marjo y quiero hacerte una pregunta directa:
+        <span style="color:#CCFF00;"><strong>¿Cuánto vale tu paz?</strong></span><br>
+        Seguro me vas a decir que no tiene precio. Pero la verdad es que sí lo tiene, y podemos ponerle un número exacto.
+      </p>
+      <p style="margin-bottom:20px;">
+        Hace un tiempo, tomé la decisión de renunciar a mi trabajo para emprender. Pero no di un salto al vacío de forma irresponsable. Lo hice sabiendo exactamente cuánto dinero necesitaba en el banco para respirar tranquila mientras construía mi propio camino. Antes de dar el gran paso, hice algo que nadie me enseñó en el mundo corporativo: <span style="color:#CCFF00;"><strong>desnudé mis finanzas.</strong></span>
+      </p>
+      <p style="margin-bottom:20px;">
+        Calculé lo básico: alimentación, salud, vivienda, transporte y un <span style="color:#CCFF00;"><strong>colchón de emergencia</strong></span>. Multipliqué ese número por 12 meses. Ese resultado fue mi <span style="color:#CCFF00;"><strong>permiso emocional</strong></span>. La licencia que me di para crear, equivocarme y pivotar sin que la ansiedad económica me tocara la puerta cada fin de mes.
+      </p>
+      <p style="margin-bottom:24px;">
+        Hoy, <span style="color:#CCFF00;"><strong>el héroe de esta historia eres tú</strong></span>, porque estás buscando ese mismo respiro. No importa si quieres emprender, cambiar de aire o simplemente blindarte ante la incertidumbre del mercado: necesitas claridad.<br><br>
+        Si estás empezando a ahorrar o quieres prepararte para lo que venga, no necesitas una fórmula mágica; necesitas tu propio <span style="color:#CCFF00;"><strong>Monto de Paz</strong></span>. Un número real, tangible, que te devuelva el control de tu vida.
+      </p>
     </div>
     <button class="hero-cta" onclick="goTo('s-calc')">
       <span data-es="Calcular mi Monto de Paz" data-en="Calculate my Peace Number">Calcular mi Monto de Paz</span>
@@ -704,6 +704,15 @@ body::before{
 <div class="screen" id="s-calc">
   <div class="funnel-wrap">
     <div class="funnel-card">
+      <div class="progress-wrap" id="progress-wrap">
+        <div class="progress-steps">
+          <div class="ps-col"><div class="ps-dot" id="pd-1"></div><div class="ps-lbl" id="pl-1">Tu Base</div></div>
+          <div class="ps-line-wrap"><div class="ps-line" id="pline-1"></div></div>
+          <div class="ps-col"><div class="ps-dot" id="pd-2"></div><div class="ps-lbl" id="pl-2">Tu Diagnóstico</div></div>
+          <div class="ps-line-wrap"><div class="ps-line" id="pline-2"></div></div>
+          <div class="ps-col"><div class="ps-dot" id="pd-3"></div><div class="ps-lbl" id="pl-3">Tu Estrategia</div></div>
+        </div>
+      </div>
       <div class="step-badge" data-es="Paso 1 de 2 · Tu base financiera" data-en="Step 1 of 2 · Your financial base">Paso 1 de 2 · Tu base financiera</div>
       <div class="funnel-q" data-es="¿Cuánto necesitas al mes para vivir con lo básico?" data-en="How much do you need per month to cover the basics?">¿Cuánto necesitas al mes para vivir con lo básico?</div>
       <div class="funnel-sub" data-es="Solo lo <strong>esencial</strong>: lo que cubriría tu vida si nada más importara. No lo soñado, lo necesario." data-en="Just the <strong>essentials</strong>: what would cover your life if nothing else mattered. Not the dream, the necessity.">Solo lo <strong>esencial</strong>: lo que cubriría tu vida si nada más importara. No lo soñado, lo necesario.</div>
@@ -758,20 +767,20 @@ body::before{
 
       <!-- Situación actual -->
       <div style="margin-top:28px;">
-        <div class="funnel-q" style="font-size:18px;margin-bottom:4px;">¿Cuál describe mejor tu situación hoy?</div>
-        <div class="funnel-sub" style="margin-bottom:14px;">Sin juicio. Esto nos ayuda a personalizar tu plan.</div>
+        <div class="funnel-q" style="font-size:18px;margin-bottom:4px;">¿Cuál te describe mejor hoy?</div>
+        <div class="funnel-sub" style="margin-bottom:14px;">Sin juicio. Esto nos ayuda a entender tu punto de partida.</div>
         <div class="sit-grid" id="sit-grid">
-          <button class="sit-card" onclick="selectSit('explorador_atrapado')" data-key="explorador_atrapado">
-            <div class="sit-card-title">Tengo estabilidad, pero busco un cambio.</div>
+          <button class="sit-card" onclick="selectSit('dependiente')" data-segmento="dependiente">
+            <div class="sit-card-title">Dependiente (Tengo un empleo de forma estable)</div>
           </button>
-          <button class="sit-card" onclick="selectSit('transicion_libertad')" data-key="transicion_libertad">
-            <div class="sit-card-title">Estoy listo para renunciar (o acabo de hacerlo).</div>
+          <button class="sit-card" onclick="selectSit('paralelo')" data-segmento="paralelo">
+            <div class="sit-card-title">Emprendo en paralelo a mi empleo</div>
           </button>
-          <button class="sit-card" onclick="selectSit('independiente_ansioso')" data-key="independiente_ansioso">
-            <div class="sit-card-title">Mis ingresos son variables o independientes.</div>
+          <button class="sit-card" onclick="selectSit('independiente')" data-segmento="independiente">
+            <div class="sit-card-title">Independiente, Emprendedor o Empresario</div>
           </button>
-          <button class="sit-card" onclick="selectSit('constructor_paralelo')" data-key="constructor_paralelo">
-            <div class="sit-card-title">Emprendo en paralelo a mi empleo.</div>
+          <button class="sit-card" onclick="selectSit('sin_empleo')" data-segmento="sin_empleo">
+            <div class="sit-card-title">Sin empleo actualmente</div>
           </button>
         </div>
         <p class="coach-err" id="err-sit" style="margin-top:8px;">Selecciona una opción para continuar.</p>
@@ -971,10 +980,18 @@ function track(event_name) {
 // PROGRESS BAR
 // ══════════════════════════════════════
 const SCREEN_STEP = { 's-calc':1, 's-result':2, 's-coach':3 };
+const PROGRESS_CARD = {
+  's-calc':   '#s-calc .funnel-card',
+  's-result': '#s-result .result-page',
+  's-coach':  '#s-coach .coach-card'
+};
 function updateProgress(screenId) {
   const step = SCREEN_STEP[screenId];
   const wrap = document.getElementById('progress-wrap');
   if (!step) { wrap.classList.remove('visible'); return; }
+  // Relocate into the active screen's card
+  const card = document.querySelector(PROGRESS_CARD[screenId]);
+  if (card && card.firstChild !== wrap) card.insertBefore(wrap, card.firstChild);
   wrap.classList.add('visible');
   [1,2,3].forEach(i => {
     document.getElementById('pd-'+i).className = 'ps-dot' + (i===step?' active':i<step?' done':'');
@@ -1041,7 +1058,7 @@ function fmt(n) {
 function selectSit(key) {
   setS({ situacion_ingresos: key });
   document.querySelectorAll('#sit-grid .sit-card').forEach(c => c.classList.remove('selected'));
-  document.querySelector(`#sit-grid [data-key="${key}"]`).classList.add('selected');
+  document.querySelector(`#sit-grid [data-segmento="${key}"]`).classList.add('selected');
   document.getElementById('err-sit').style.display = 'none';
 }
 
