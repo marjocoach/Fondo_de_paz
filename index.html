@@ -31,8 +31,9 @@ body{
   background:#0D0D0D;color:var(--cream);
   font-family:'Inter',sans-serif;font-weight:300;line-height:1.6;
   overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;
-  height:100%;scroll-behavior:smooth;
+  height:100%;scroll-behavior:smooth;padding-bottom:44px;
 }
+.site-footer{position:fixed;bottom:0;left:0;right:0;text-align:center;font-size:11px;color:var(--muted);padding:12px 16px;background:transparent;pointer-events:none;z-index:100;line-height:1.5;}
 body::before{
   content:'';position:fixed;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
@@ -640,8 +641,8 @@ body::before{
 <div class="sobre-panel" id="sobre-panel">
   <button class="sobre-close" onclick="closeSobre()">×</button>
   <div class="sobre-photo"><img src="marjo-foto.jpg" alt="Marjo Coach"></div>
-  <div class="sobre-name">Hola, soy Marjo</div>
-  <div class="sobre-role">Humana · Negocios · Tecnología</div>
+  <div class="sobre-name" data-es="Hola, soy Marjo" data-en="Hello, I'm Marjo">Hola, soy Marjo</div>
+  <div class="sobre-role" data-es="Humana · Negocios · Tecnología" data-en="Human · Business · Technology">Humana · Negocios · Tecnología</div>
   <div class="sobre-divider"></div>
   <div class="sobre-bio">
     <p>A mis 25 años mi vida parecía "perfecta": departamento propio, buen trabajo y estabilidad financiera. Construir eso a esa edad no fue suerte; fue gracias al orden, la estructura y el haberle puesto números a mis metas. Sin embargo, me sentía profundamente vacía. Es fuerte admitir que te falta el aire cuando el mundo te dice que ya "triunfaste".</p>
@@ -651,7 +652,7 @@ body::before{
     <p><strong>Es momento de dejar de sobrevivir el guion de otros y empezar a financiar el tuyo.</strong></p>
   </div>
   <div style="margin-top:24px;">
-    <button class="btn-primary" onclick="closeSobre(); goTo('s-calc'); setTimeout(function(){ var el=document.getElementById('c-alimentacion'); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); },300); try{gtag('event','click_calcular_paz');}catch(e){}">Diseñar mi Plan de Paz Gratis →</button>
+    <button class="btn-primary" onclick="closeSobre(); goTo('s-calc'); setTimeout(function(){ var el=document.getElementById('c-alimentacion'); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); },300); try{gtag('event','click_calcular_paz');}catch(e){}" data-es="Diseñar mi Plan de Paz Gratis →" data-en="Design my Peace Plan Free →">Diseñar mi Plan de Paz Gratis →</button>
   </div>
 </div>
 
@@ -684,19 +685,18 @@ body::before{
       <h1 data-es="Monto&nbsp;<em>de Paz</em>" data-en="Peace&nbsp;<em>Number</em>">Monto&nbsp;<em>de Paz</em></h1>
     </div>
     <div class="hero-story-block storytelling-content" style="color:#FFFFFF;font-size:16px;line-height:1.6;max-width:650px;margin:0 auto;">
-      <p style="margin-bottom:20px;">Hola, soy Marjo y quiero hacerte una pregunta directa:
-        <span style="color:#CCFF00;"><strong>¿Cuánto vale tu paz?</strong></span><br>
-        Seguro me vas a decir que no tiene precio. Pero la verdad es que sí lo tiene, y podemos ponerle un número exacto.
+      <p style="margin-bottom:20px;">
+        <span style="color:var(--accent)"><strong>¿Cuánto vale tu paz?</strong></span><br>
+        Seguro me vas a decir que no tiene precio. Pero la verdad es que sí lo tiene, y se puede calcular.
       </p>
       <p style="margin-bottom:20px;">
-        Hace un tiempo, tomé la decisión de renunciar a mi trabajo para emprender. Pero no di un salto al vacío de forma irresponsable. Lo hice sabiendo exactamente cuánto dinero necesitaba en el banco para respirar tranquila mientras construía mi propio camino. Antes de dar el gran paso, hice algo que nadie me enseñó en el mundo corporativo: <span style="color:#CCFF00;"><strong>desnudé mis finanzas.</strong></span>
+        Hace un tiempo, renuncié a mi trabajo para construir mi propio camino. No di un salto al vacío; lo hice sabiendo exactamente cuánto dinero necesitaba en el banco para respirar tranquila. Antes de irme, hice algo que nadie nos enseña: ordené el caos y sumé lo básico (vivienda, comida, salud) hasta armar un colchón de <span style="color:var(--accent)"><strong>12 meses</strong></span>. Ese número fue mi <span style="color:var(--accent)"><strong>"permiso emocional"</strong></span> para equivocarme y crear sin ansiedad.
       </p>
       <p style="margin-bottom:20px;">
-        Calculé lo básico: alimentación, salud, vivienda, transporte y un <span style="color:#CCFF00;"><strong>colchón de emergencia</strong></span>. Multipliqué ese número por 12 meses. Ese resultado fue mi <span style="color:#CCFF00;"><strong>permiso emocional</strong></span>. La licencia que me di para crear, equivocarme y pivotar sin que la ansiedad económica me tocara la puerta cada fin de mes.
+        Si estás aquí, el héroe eres tú. No importa si quieres emprender o si solo quieres dejar de sentir que el dinero se te escapa de las manos. Si estás empezando a ahorrar y no sabes por dónde o cuánto, no necesitas fórmulas mágicas. Necesitas tu <span style="color:var(--accent)"><strong>Monto de Paz</strong></span>: un número real y claro que te devuelva el control.
       </p>
-      <p style="margin-bottom:24px;">
-        Hoy, <span style="color:#CCFF00;"><strong>el héroe de esta historia eres tú</strong></span>, porque estás buscando ese mismo respiro. No importa si quieres emprender, cambiar de aire o simplemente blindarte ante la incertidumbre del mercado: necesitas claridad.<br><br>
-        Si estás empezando a ahorrar o quieres prepararte para lo que venga, no necesitas una fórmula mágica; necesitas tu propio <span style="color:#CCFF00;"><strong>Monto de Paz</strong></span>. Un número real, tangible, que te devuelva el control de tu vida.
+      <p style="margin-bottom:24px;font-style:italic;">
+        Vamos a encontrarlo juntos.
       </p>
     </div>
     <button class="hero-cta" onclick="goTo('s-calc')">
@@ -825,8 +825,8 @@ body::before{
 
     <!-- BLOQUE DIAGNÓSTICO -->
     <div class="rfield-block">
-      <div class="rfield-q" data-es="Si mañana te quedas sin ingresos, ¿cuántos días o meses podrías mantener tu estilo de vida actual con lo que tienes ahorrado?" data-en="If you lost all income tomorrow, how many days or months could you maintain your current lifestyle with what you have saved?">Si mañana te quedas sin ingresos, ¿cuántos días o meses podrías mantener tu estilo de vida actual con lo que tienes ahorrado?</div>
-      <div class="rfield-hint" data-es="No importa si es cero. Necesitamos la foto de hoy." data-en="Even if it's zero. We need today's snapshot.">No importa si es cero. Necesitamos la foto de hoy.</div>
+      <div class="rfield-q" data-es="Seamos honestxs, ¿cuántos días o meses podrías mantener tu estilo de vida actual con lo que tienes ahorrado?" data-en="Let's be honest — how many days or months could you maintain your current lifestyle with what you have saved?">Seamos honestxs, ¿cuántos días o meses podrías mantener tu estilo de vida actual con lo que tienes ahorrado?</div>
+      <div class="rfield-hint" data-es="Sin juicio. No importa si es cero. Necesitamos la foto de hoy." data-en="No judgment. Even if it's zero. We need today's snapshot.">Sin juicio. No importa si es cero. Necesitamos la foto de hoy.</div>
       <div class="toggle-row">
         <div class="coach-input-row" style="flex:1;margin-bottom:0;">
           <input class="calc-input" type="number" id="c-supervivencia" placeholder="0" min="0" style="width:100%;padding-left:8px;" oninput="validateResultFields()">
@@ -838,8 +838,8 @@ body::before{
       </div>
       <p class="rfield-err" id="err-supervivencia" data-es="Ingresa un valor." data-en="Enter a value.">Ingresa un valor.</p>
 
-      <div class="rfield-q" style="margin-top:24px;" data-es="¿Cuánto podrías separar <strong style=&quot;color:var(--accent)&quot;>CADA SEMANA</strong> desde tu celular sin afectar comida ni techo?" data-en="How much could you set aside <strong style=&quot;color:var(--accent)&quot;>EVERY WEEK</strong> from your phone without affecting food or rent?">¿Cuánto podrías separar <strong style="color:var(--accent)">CADA SEMANA</strong> desde tu celular sin afectar comida ni techo?</div>
-      <div class="rfield-hint" data-es="Sin asfixiarte. Realista." data-en="Without choking yourself. Be realistic.">Sin asfixiarte. Realista.</div>
+      <div class="rfield-q" style="margin-top:24px;" data-es="¿Cuánto podrías separar <strong style=&quot;color:var(--accent)&quot;>CADA MES</strong> aportar a tu Fondo de Paz sin afectar comida ni techo?" data-en="How much could you set aside <strong style=&quot;color:var(--accent)&quot;>EACH MONTH</strong> for your Peace Fund without affecting food or rent?">¿Cuánto podrías separar <strong style="color:var(--accent)">CADA MES</strong> aportar a tu Fondo de Paz sin afectar comida ni techo?</div>
+      <div class="rfield-hint" data-es="Si colocaste 0, está bien, hoy puede iniciar. Sin asfixiarte. Realista." data-en="If you put 0, that's okay — today can be the start. Without choking yourself. Be realistic.">Si colocaste 0, está bien, hoy puede iniciar. Sin asfixiarte. Realista.</div>
       <div class="coach-input-row" style="margin-bottom:0;">
         <span class="csym" id="sym-semanal">S/</span>
         <input class="calc-input" type="number" id="c-semanal" placeholder="0" min="0" style="width:100%;padding-left:8px;" oninput="validateResultFields()">
@@ -872,26 +872,13 @@ body::before{
       <p class="coach-err" id="err-microaccion" data-es="Este campo es requerido." data-en="This field is required.">Este campo es requerido.</p>
 
       <!-- Prioridad -->
-      <div class="coach-q" style="margin-top:28px;line-height:1.5;" data-es="Para construir tu Monto de Paz, ¿cuál es tu prioridad?" data-en="To build your Peace Number, what is your priority?">Para construir tu Monto de Paz, ¿cuál es tu prioridad?</div>
-      <div class="prio-grid" style="margin-top:12px;">
-        <button class="prio-card" onclick="selectPrioridad('A')" data-prio="A">
-          <span class="prio-letter">A</span>
-          <span class="prio-text" data-es="100% seguro y disponible en 24h, aunque no crezca nada." data-en="100% safe and available within 24h, even if it doesn't grow.">100% seguro y disponible en 24h, aunque no crezca nada.</span>
-        </button>
-        <button class="prio-card" onclick="selectPrioridad('B')" data-prio="B">
-          <span class="prio-letter">B</span>
-          <span class="prio-text" data-es="Dejarlo quieto unos meses si crece más que un banco." data-en="Leave it untouched for a few months if it grows more than a bank.">Dejarlo quieto unos meses si crece más que un banco.</span>
-        </button>
-        <button class="prio-card" onclick="selectPrioridad('C')" data-prio="C">
-          <span class="prio-letter">C</span>
-          <span class="prio-text" data-es="Crecer a largo plazo; acepto que el mercado sube y baja." data-en="Grow long-term; I accept that markets go up and down.">Crecer a largo plazo; acepto que el mercado sube y baja.</span>
-        </button>
-        <button class="prio-card" onclick="selectPrioridad('D')" data-prio="D">
-          <span class="prio-letter">D</span>
-          <span class="prio-text" data-es="No sé de finanzas, necesito que me recomienden." data-en="I don't know finance, I need a recommendation.">No sé de finanzas, necesito que me recomienden.</span>
-        </button>
-      </div>
-      <p class="coach-err" id="err-prioridad" data-es="Selecciona una opción." data-en="Select an option.">Selecciona una opción.</p>
+      <div class="coach-q" style="margin-top:28px;line-height:1.5;" data-es="¿Cómo te ayudo?" data-en="How can I help you?">¿Cómo te ayudo?</div>
+      <div class="rfield-hint" style="margin-top:4px;margin-bottom:0;" data-es="Leo personalmente cada mensaje &lt;3" data-en="I personally read every message &lt;3">Leo personalmente cada mensaje &lt;3</div>
+      <textarea class="survey-textarea" id="c-como-ayudo"
+        placeholder="Cuéntame qué necesitas..."
+        data-ph-es="Cuéntame qué necesitas..."
+        data-ph-en="Tell me what you need..."
+        style="margin-top:10px;margin-bottom:6px;min-height:110px;resize:none;"></textarea>
 
       <button class="btn-primary" onclick="submitCoach()" style="margin-top:28px;" data-es="Generar mi Reporte de Paz Financiera →" data-en="Generate my Financial Peace Report →">Generar mi Reporte de Paz Financiera →</button>
     </div>
@@ -904,9 +891,9 @@ body::before{
 <div class="screen" id="s-final">
   <div class="result-page" style="padding-top:40px;">
     <div class="capture-block" id="unified-block">
-      <div class="capture-eyebrow" data-es="Último paso · Gratis" data-en="Last step · Free">Último paso · Gratis</div>
-      <div class="capture-q" data-es="¡Tu Reporte está listo! ¿A dónde te lo enviamos?" data-en="Your Report is ready! Where should we send it?">¡Tu Reporte está listo! ¿A dónde te lo enviamos?</div>
-      <div class="capture-sub" data-es="Te enviamos tu plan personalizado + seguimiento en 30 días por WhatsApp. Sin spam." data-en="We'll send your personalized plan + 30-day WhatsApp follow-up. No spam.">Te enviamos tu plan personalizado + seguimiento en 30 días por WhatsApp. Sin spam.</div>
+      <div class="capture-eyebrow" data-es="" data-en="" style="display:none;"></div>
+      <div class="capture-q" data-es="¿Quieres que revisemos tu número juntas?" data-en="Want to review your number together?">¿Quieres que revisemos tu número juntas?</div>
+      <div class="capture-sub" data-es="Déjame tu WhatsApp y te escribo personalmente cuando tenga espacio en agenda." data-en="Leave me your WhatsApp and I'll write to you personally when I have space in my calendar.">Déjame tu WhatsApp y te escribo personalmente cuando tenga espacio en agenda.</div>
 
       <input class="name-input" type="text" id="name-input" placeholder="¿Cómo te llamo?" data-ph-es="¿Cómo te llamo?" data-ph-en="What's your name?" autocomplete="given-name" oninput="validateLead()">
       <div class="phone-row">
@@ -927,13 +914,13 @@ body::before{
         </select>
         <input class="phone-input" type="tel" id="phone-input" placeholder="987 654 321" inputmode="numeric" oninput="validateLead()">
       </div>
-      <div class="phone-note" data-es="🔒 Solo uso tu número para este seguimiento. Nada más." data-en="🔒 I only use your number for this follow-up. Nothing else.">🔒 Solo uso tu número para este seguimiento. Nada más.</div>
+      <div class="phone-note" data-es="Solo te escribo yo. Sin bots. Sin spam." data-en="Only I write to you. No bots. No spam.">Solo te escribo yo. Sin bots. Sin spam.</div>
 
       <button class="btn-primary" id="btn-submit-lead" onclick="submitLead()" disabled
         style="opacity:0.45;cursor:not-allowed;transition:opacity 0.2s;"
-        data-es="Descargar mi Plan + Activar Seguimiento Gratis →"
-        data-en="Download my Plan + Activate Free Follow-up →">
-        Descargar mi Plan + Activar Seguimiento Gratis →
+        data-es="Quiero seguimiento personal →"
+        data-en="I want personal follow-up →">
+        Quiero seguimiento personal →
       </button>
 
       <!-- Thank you -->
@@ -988,16 +975,33 @@ let _lang = 'es';
 
 const _HERO_P = {
   es: [
-    'Hola, soy Marjo y quiero hacerte una pregunta directa: <span style="color:#CCFF00;"><strong>¿Cuánto vale tu paz?</strong></span><br>Seguro me vas a decir que no tiene precio. Pero la verdad es que sí lo tiene, y podemos ponerle un número exacto.',
-    'Hace un tiempo, tomé la decisión de renunciar a mi trabajo para emprender. Pero no di un salto al vacío de forma irresponsable. Lo hice sabiendo exactamente cuánto dinero necesitaba en el banco para respirar tranquila mientras construía mi propio camino. Antes de dar el gran paso, hice algo que nadie me enseñó en el mundo corporativo: <span style="color:#CCFF00;"><strong>desnudé mis finanzas.</strong></span>',
-    'Calculé lo básico: alimentación, salud, vivienda, transporte y un <span style="color:#CCFF00;"><strong>colchón de emergencia</strong></span>. Multipliqué ese número por 12 meses. Ese resultado fue mi <span style="color:#CCFF00;"><strong>permiso emocional</strong></span>. La licencia que me di para crear, equivocarme y pivotar sin que la ansiedad económica me tocara la puerta cada fin de mes.',
-    'Hoy, <span style="color:#CCFF00;"><strong>el héroe de esta historia eres tú</strong></span>, porque estás buscando ese mismo respiro. No importa si quieres emprender, cambiar de aire o simplemente blindarte ante la incertidumbre del mercado: necesitas claridad.<br><br>Si estás empezando a ahorrar o quieres prepararte para lo que venga, no necesitas una fórmula mágica; necesitas tu propio <span style="color:#CCFF00;"><strong>Monto de Paz</strong></span>. Un número real, tangible, que te devuelva el control de tu vida.'
+    '<span style="color:var(--accent)"><strong>¿Cuánto vale tu paz?</strong></span><br>Seguro me vas a decir que no tiene precio. Pero la verdad es que sí lo tiene, y se puede calcular.',
+    'Hace un tiempo, renuncié a mi trabajo para construir mi propio camino. No di un salto al vacío; lo hice sabiendo exactamente cuánto dinero necesitaba en el banco para respirar tranquila. Antes de irme, hice algo que nadie nos enseña: ordené el caos y sumé lo básico (vivienda, comida, salud) hasta armar un colchón de <span style="color:var(--accent)"><strong>12 meses</strong></span>. Ese número fue mi <span style="color:var(--accent)"><strong>"permiso emocional"</strong></span> para equivocarme y crear sin ansiedad.',
+    'Si estás aquí, el héroe eres tú. No importa si quieres emprender o si solo quieres dejar de sentir que el dinero se te escapa de las manos. Si estás empezando a ahorrar y no sabes por dónde o cuánto, no necesitas fórmulas mágicas. Necesitas tu <span style="color:var(--accent)"><strong>Monto de Paz</strong></span>: un número real y claro que te devuelva el control.',
+    '<em>Vamos a encontrarlo juntos.</em>'
   ],
   en: [
-    'Hi, I\'m Marjo and I want to ask you something directly: <span style="color:#CCFF00;"><strong>How much is your peace worth?</strong></span><br>You\'ll probably say it\'s priceless. But the truth is, it has a price — and we can put an exact number on it.',
-    'Some time ago, I decided to quit my job to build my own path. But I didn\'t leap blindly. I did it knowing exactly how much money I needed in the bank to breathe easy while building my own way. Before taking that big step, I did something no corporate job ever taught me: <span style="color:#CCFF00;"><strong>I stripped my finances bare.</strong></span>',
-    'I calculated the basics: food, health, housing, transport, and an <span style="color:#CCFF00;"><strong>emergency cushion</strong></span>. I multiplied that number by 12 months. That result became my <span style="color:#CCFF00;"><strong>emotional permission</strong></span>. The license I gave myself to create, fail, and pivot without financial anxiety knocking on my door every month.',
-    'Today, <span style="color:#CCFF00;"><strong>you are the hero of this story</strong></span>, because you\'re looking for that same breath of fresh air. Whether you want to start a business, change direction, or protect yourself from market uncertainty: you need clarity.<br><br>If you\'re starting to save or want to prepare for what\'s ahead, you don\'t need a magic formula; you need your own <span style="color:#CCFF00;"><strong>Peace Number</strong></span>. A real, tangible number that gives you back control of your life.'
+    '<span style="color:var(--accent)"><strong>How much is your peace worth?</strong></span><br>You\'ll probably say it\'s priceless. But the truth is, it has a price — and it can be calculated.',
+    'Some time ago, I quit my job to build my own path. I didn\'t leap blindly — I did it knowing exactly how much money I needed in the bank to breathe easy. Before leaving, I did something no one teaches us: I sorted through the chaos and added up the basics (housing, food, health) until I had a <span style="color:var(--accent)"><strong>12-month</strong></span> cushion. That number became my <span style="color:var(--accent)"><strong>"emotional permission"</strong></span> to make mistakes and create without anxiety.',
+    'If you\'re here, you\'re the hero. It doesn\'t matter if you want to start a business or just stop feeling like money slips through your fingers. If you\'re starting to save and don\'t know where or how much, you don\'t need magic formulas. You need your <span style="color:var(--accent)"><strong>Peace Number</strong></span>: a real, clear figure that gives you back control.',
+    '<em>Let\'s find it together.</em>'
+  ]
+};
+
+const _SOBRE_P = {
+  es: [
+    'A mis 25 años mi vida parecía &ldquo;perfecta&rdquo;: departamento propio, buen trabajo y estabilidad financiera. Construir eso a esa edad no fue suerte; fue gracias al orden, la estructura y el haberle puesto números a mis metas. Sin embargo, me sentía profundamente vacía. Es fuerte admitir que te falta el aire cuando el mundo te dice que ya &ldquo;triunfaste&rdquo;.',
+    'Ahí comenzó mi verdadero viaje. Llevo 7 años mirando hacia adentro para romper patrones, poner límites y liberarme del &ldquo;deber ser&rdquo; para empezar a Ser yo misma.',
+    'Hoy fusiono esa transformación con mi otra pasión: la tecnología y los negocios. A través de mis herramientas digitales, te doy la estructura para hackear tu mente, romper tus propios ciclos y diseñar la vida que realmente quieres.',
+    'Porque tus sueños no son fantasías abstractas; son proyectos esperando un Plan Real. Y la única forma de hacerlos tangibles es poniéndoles estructura, metas claras y números. No le tengas miedo a tu realidad financiera; mírala de frente, porque tus números son los cimientos de tu libertad.',
+    '<strong>Es momento de dejar de sobrevivir el guion de otros y empezar a financiar el tuyo.</strong>'
+  ],
+  en: [
+    'At 25, my life looked &ldquo;perfect&rdquo;: my own apartment, a good job, and financial stability. Building that at that age wasn\'t luck — it came from order, structure, and putting numbers to my goals. Yet I felt deeply empty. It\'s hard to admit you\'re suffocating when the world tells you that you\'ve already &ldquo;made it.&rdquo;',
+    'That\'s where my real journey began. For 7 years I\'ve been looking inward — breaking patterns, setting boundaries, and freeing myself from &ldquo;who I should be&rdquo; to start being myself.',
+    'Today I merge that transformation with my other passion: technology and business. Through my digital tools, I give you the structure to hack your mind, break your own cycles, and design the life you actually want.',
+    'Because your dreams aren\'t abstract fantasies — they\'re projects waiting for a Real Plan. The only way to make them tangible is to give them structure, clear goals, and numbers. Don\'t be afraid of your financial reality; face it head on, because your numbers are the foundation of your freedom.',
+    '<strong>It\'s time to stop surviving someone else\'s script and start funding your own.</strong>'
   ]
 };
 
@@ -1021,6 +1025,10 @@ function setLang(lang) {
   // hero story paragraphs
   document.querySelectorAll('.hero-story-block p').forEach((p, i) => {
     if (_HERO_P[lang][i] !== undefined) p.innerHTML = _HERO_P[lang][i];
+  });
+  // sobre mí bio paragraphs
+  document.querySelectorAll('.sobre-bio p').forEach((p, i) => {
+    if (_SOBRE_P[lang][i] !== undefined) p.innerHTML = _SOBRE_P[lang][i];
   });
 }
 
@@ -1175,8 +1183,12 @@ function fitNumberToEyebrow() {
   const eyebrow = document.querySelector('#s-result .result-eyebrow');
   const rNum    = document.getElementById('r-num');
   if (!eyebrow || !rNum || !rNum.textContent) return;
-  const target = eyebrow.getBoundingClientRect().width * 1.2;
+  const eyebrowW  = eyebrow.getBoundingClientRect().width * 1.2;
+  const blockRect = rNum.parentElement.getBoundingClientRect();
+  const cardInner = blockRect.width > 0 ? blockRect.width - 72 : eyebrowW;
+  const target    = Math.min(eyebrowW, cardInner);
   if (target <= 0) return;
+  rNum.style.display = 'inline-block';
   let lo = 16, hi = 450;
   for (let i = 0; i < 30; i++) {
     const mid = (lo + hi) / 2;
@@ -1185,6 +1197,7 @@ function fitNumberToEyebrow() {
     if (rNum.scrollWidth < target) lo = mid; else hi = mid;
   }
   rNum.style.fontSize = Math.floor(lo) + 'px';
+  rNum.style.display = 'block';
 }
 
 function buildResultUI(ali, viv, sal, tra, otrosRows, emerg, monthly, total) {
@@ -1273,25 +1286,17 @@ function goToCoach() {
 // ══════════════════════════════════════
 // P4 — PRIORIDAD CARDS
 // ══════════════════════════════════════
-function selectPrioridad(key) {
-  setS({ prioridad_perfil_oculto: key });
-  document.querySelectorAll('.prio-card').forEach(c => c.classList.remove('selected'));
-  document.querySelector(`.prio-card[data-prio="${key}"]`).classList.add('selected');
-  document.getElementById('err-prioridad').classList.remove('show');
-}
 
 // ── P4 → P5 ──
 function submitCoach() {
   const microaccion = document.getElementById('c-microaccion').value.trim();
-  const s = getS();
+  const comoAyudo   = document.getElementById('c-como-ayudo').value.trim();
   let valid = true;
   document.getElementById('err-microaccion').classList.remove('show');
-  document.getElementById('err-prioridad').classList.remove('show');
   if (!microaccion) { document.getElementById('err-microaccion').classList.add('show'); valid = false; }
-  if (!s.prioridad_perfil_oculto) { document.getElementById('err-prioridad').classList.add('show'); valid = false; }
   if (!valid) return;
 
-  setS({ microaccion_compromiso: microaccion });
+  setS({ microaccion_compromiso: microaccion, como_ayudo: comoAyudo });
   track('step_3_estrategia_complete');
   goTo('s-final');
 }
@@ -1321,10 +1326,7 @@ async function submitLead() {
   const dias = _supervivenciaUnidad === 'meses'
     ? (s.supervivencia_valor || 0) * 30
     : (s.supervivencia_valor || 0);
-  const segmap = { A:'Ahorro Líquido', B:'Renta Fija', C:'Inversión Renta Variable (FLIP)', D:'Por Asesorar' };
-  const segmento_lead = dias < 90
-    ? 'Fondo de Emergencia Primario'
-    : (segmap[s.prioridad_perfil_oculto] || 'Por Asesorar');
+  const segmento_lead = dias < 90 ? 'Fondo de Emergencia Primario' : 'Por Asesorar';
 
   const payload = {
     session_id: SESSION_ID,
@@ -1345,7 +1347,7 @@ async function submitLead() {
       supervivencia_unidad:     s.supervivencia_unidad,
       capacidad_ahorro_semanal: s.capacidad_ahorro_semanal,
       microaccion_compromiso:   s.microaccion_compromiso,
-      prioridad_perfil_oculto:  s.prioridad_perfil_oculto
+      como_ayudo:               s.como_ayudo
     },
     routing_negocio: { segmento_lead }
   };
@@ -1420,5 +1422,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.hero-cta')?.addEventListener('click', () => track('click_calcular_paz'));
 });
 </script>
+<footer class="site-footer">
+  <span data-es="Hecho con amor ♥ por Marjo · Para que más personas tengan claridad financiera y la libertad de decidir." data-en="Made with love ♥ by Marjo · So more people can have financial clarity and the freedom to choose.">Hecho con amor ♥ por Marjo · Para que más personas tengan claridad financiera y la libertad de decidir.</span>
+</footer>
 </body>
 </html>
